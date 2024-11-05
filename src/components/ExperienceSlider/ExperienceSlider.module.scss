@@ -1,0 +1,90 @@
+@import "variables";
+@import "mixins";
+
+.experienceSlider {
+  margin-bottom: 20vh;
+  :global(.swiper-pagination) {
+    text-align: center;
+    padding-left: 0;
+    bottom: 20px !important;
+
+    :global(.swiper-pagination-bullet) {
+      display: inline-block;
+      margin: 2px;
+      height: 8px;
+      width: 20px;
+      background: $primary-color;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: 0.5s ease;
+      border: 0;
+
+      &.swiper-pagination-bullet-active {
+        background: $primary-color;
+        width: 30px;
+      }
+    }
+  }
+
+  &_slide {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 30vh;
+    margin-bottom: 5rem;
+    &_leftContainer {
+      width: 30%;
+      padding-right: 8rem;
+
+      &_title {
+        @include title;
+      }
+
+      &_date {
+        @include smaller-text;
+        color: $primary-color;
+        margin: 0.5rem 0 0.5rem;
+        font-weight: bold;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+
+      &_description {
+        @include smaller-text;
+        margin: 2rem 0 2rem;
+      }
+
+      &_skill {
+        &_item {
+          @include smaller-text;
+          border-top: solid 1px;
+          display: flex;
+          align-items: center;
+          padding: 0.8rem 0 0.8rem;
+
+          &:last-child {
+            border-bottom: solid 1px;
+          }
+        }
+
+        &_icon {
+          width: 30px;
+          margin-right: 1rem;
+          height: auto;
+        }
+      }
+    }
+
+    &_rightContainer {
+      width: 50vh;
+
+      &_video {
+        height: 60vh;
+        width: 60vh;
+        border-radius: 10px;
+        object-fit: cover;
+        overflow: hidden;
+      }
+    }
+  }
+}

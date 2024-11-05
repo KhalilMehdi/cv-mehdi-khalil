@@ -1,0 +1,15 @@
+@import "variables";
+@import "mixins";
+
+.separator {
+  border-top: solid 1px;
+  border-bottom: 1px solid;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30vh;
+  &_title {
+    color: $primary-color;
+    @include medium-text;
+  }
+}

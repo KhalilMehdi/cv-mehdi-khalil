@@ -1,0 +1,133 @@
+@import "variables";
+@import "mixins";
+
+.contact {
+  display: flex;
+  height: 100vh;
+  padding: 4rem;
+
+  &_leftContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    margin-top: 14rem;
+    &_description {
+      h2 {
+        @include small-text;
+        max-width: 90%;
+        height: 50%;
+      }
+      &_download {
+        margin-top: 2rem;
+        border: none;
+        background: none;
+        padding: 0.8rem;
+        border: solid 1px $text-color;
+        @include smaller-text;
+        &:hover {
+          background-color: $primary-color;
+          transition: background-color 0.3s ease, color 0.3s ease;
+          color: white;
+        }
+      }
+    }
+
+    h3 {
+      @include smaller-text;
+      margin-top: 8rem;
+      padding-bottom: 06px;
+    }
+    &_footer {
+      display: flex;
+      justify-content: space-between;
+      &_topArrow {
+        width: 60px;
+        align-self: flex-end;
+        height: auto;
+        animation: bounce 2s infinite ease-in-out;
+      }
+    }
+  }
+
+  &_rightContainer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+    &_socialsContainer {
+      height: 50%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      table {
+        border-collapse: collapse;
+      }
+      td {
+        @include smaller-text;
+        padding: 6px;
+        width: 30rem;
+        border-top: solid 1px $text-color;
+      }
+      &_link {
+        a {
+          display: flex;
+        }
+        &:hover {
+          background-color: $primary-color;
+          color: white;
+          padding-right: 12px;
+          padding-left: 12px;
+          transition: background-color 0.3s ease, color 0.3s ease,
+            padding 0.3s ease;
+        }
+      }
+    }
+
+    &_nameContainer {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      height: 50%;
+      h1 {
+        transition: all 2s cubic-bezier(0, 0, 0.23, 1);
+        background-image: linear-gradient(
+          90deg,
+          $primary-color,
+          $primary-color 50%,
+          $text-color 50%
+        );
+        background-size: 200% 100%;
+        background-position: 100%;
+        font-size: 18rem;
+        font-weight: lighter;
+        font-family: "Righteous", sans-serif;
+        line-height: 0.8;
+        letter-spacing: 1rem;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        &:hover {
+          background-position: 0;
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
